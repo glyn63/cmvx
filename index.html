@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lichess PGN Viewer</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+    }
+    input[type="text"] {
+      width: 60%;
+      padding: 0.5rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      margin-left: 1rem;
+    }
+    pre {
+      margin-top: 1rem;
+      background-color: #f0f0f0;
+      padding: 1rem;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lichess PGN Viewer</h1>
+  <form id="lichessForm">
+    <input type="text" id="lichessUrl" placeholder="Paste Lichess game URL here" required>
+    <button type="submit">Load PGN</button>
+  </form>
+  <pre id="output">Moves will appear here...</pre>
+
+  <!-- chess.js from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/1.0.0/chess.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
