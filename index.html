@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Lichess PGN Viewer</title>
+  <meta charset="UTF-8" />
+  <title>Lichess PGN Viewer with Details</title>
   <style>
     body {
-      font-family: sans-serif;
-      padding: 2rem;
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: auto;
+      padding: 1em;
     }
-    input[type="text"] {
-      width: 60%;
-      padding: 0.5rem;
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 1em;
     }
-    button {
-      padding: 0.5rem 1rem;
-      margin-left: 1rem;
+    th, td {
+      border: 1px solid #ddd;
+      padding: 0.5em;
+      text-align: center;
     }
-    pre {
-      margin-top: 1rem;
-      background-color: #f0f0f0;
-      padding: 1rem;
-      white-space: pre-wrap;
+    th {
+      background-color: #f4f4f4;
+    }
+    #error {
+      color: red;
+      margin-top: 1em;
     }
   </style>
 </head>
 <body>
-  <h1>Lichess PGN Viewer</h1>
+  <h1>Lichess PGN Viewer with Move Details</h1>
+
   <form id="lichessForm">
-    <input type="text" id="lichessUrl" placeholder="Paste Lichess game URL here" required>
+    <input type="url" id="lichessUrl" placeholder="Paste Lichess game URL here" required style="width:80%;" />
     <button type="submit">Load PGN</button>
   </form>
-  <pre id="output">Moves will appear here...</pre>
 
-  <!-- chess.js from CDN -->
+  <div id="error"></div>
+  <div id="output"></div>
+
+  <!-- Load chess.js locally or from CDN -->
   <script src="chess.min.js"></script>
   <script src="script.js"></script>
 </body>
