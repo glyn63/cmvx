@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Parse PGN and generate move details
       const movesDetails = parsePGNwithDetails(pgn);
+      console.log("Parsed moves:", movesDetails); 
 
       // Render the moves in a table
       output.innerHTML = renderMovesTable(movesDetails);
@@ -74,6 +75,8 @@ function parsePGNwithDetails(pgn) {
       san: move.san,
       fen: chessReplay.fen()
     });
+
+    console.log("Move", i + 1, moveDetail); // 
   }
 
   return result;
